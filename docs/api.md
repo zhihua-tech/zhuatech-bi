@@ -15,3 +15,7 @@ Copyright 2026 上海如静知华信息科技有限公司。
 | GET | `/subject-areas` | 主题域与覆盖进度 |
 
 演示角色：`ADMIN`、`DATA_ANALYST`、`EMPLOYEE`。生产环境必须增加行列权限、指标口径版本、下载审计、脱敏策略和查询资源配额。
+
+## 指标异常解释
+
+`POST /api/bi/metric-anomaly`：返回标准分、变化方向、异常严重度和解释动作。

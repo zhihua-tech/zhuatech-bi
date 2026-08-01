@@ -74,3 +74,7 @@ npm run dev:demo
 | ![知华科技微信一](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 关键词：BI 开源、商业智能源码、经营驾驶舱、数据可视化平台、自助分析、指标管理、Java BI、Vue BI、知华科技、上海如静知华信息科技有限公司。
+
+## 可解释指标异常
+
+`POST /api/bi/metric-anomaly` 使用当前值、基线、标准差、业务影响和数据新鲜度计算异常分。除严重等级外，还返回变化方向、标准分以及刷新数据、维度下钻和通知指标负责人的解释性动作，避免驾驶舱只亮红灯却不给原因。
