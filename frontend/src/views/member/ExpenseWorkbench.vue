@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import StatusBadge from '../../components/StatusBadge.vue';import {expenses} from '../../api/mock'</script>
 <template><div class="employee-mobile"><header><div class="mobile-brand"><span>ZH</span><div><b>知华数据</b><small>ZHUATECH BI</small></div></div><button>♢</button></header><main>
 <section class="mobile-welcome"><p>7 月 31 日 · 星期五</p><h1>下午好，温书屿</h1><span>你关注的经营指标和分析订阅已更新</span></section>

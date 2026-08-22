@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {accounts,payables} from '../../api/mock'</script>
 <template><AdminShell><template #title>数据源管理</template><div class="page-heading"><div><p>DATA CONNECTIONS</p><h1>数据源管理</h1><span>数据库、API、消息流与文件数据源集中接入和监控</span></div><div><button class="button secondary">连接测试</button><button class="button primary">＋ 新建数据源</button></div></div>
 <section class="treasury-hero"><div><span>已接入数据源</span><strong>12<small> 个</small></strong><p>正常 11 个 · 维护中 1 个 · 今日处理 286.4 万行</p></div><div class="allocation"><article><span>数据库</span><b>50%</b><i><em style="width:50%"></em></i></article><article><span>API 与消息流</span><b>33%</b><i><em style="width:33%"></em></i></article><article><span>文件与手工数据</span><b>17%</b><i><em style="width:17%"></em></i></article></div><aside><small>数据新鲜度指数</small><b>96</b><span>核心主题均已更新</span></aside></section>

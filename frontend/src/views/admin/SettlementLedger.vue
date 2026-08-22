@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import {ref} from 'vue';import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {receivables,payables} from '../../api/mock';const tab=ref('业务指标')</script>
 <template><AdminShell><template #title>指标与数据集</template><div class="page-heading"><div><p>METRICS & DATASETS</p><h1>指标与数据集</h1><span>统一指标口径、数据血缘、责任归属与服务状态</span></div><div><button class="button secondary">导入指标</button><button class="button primary">＋ 新建指标</button></div></div>
 <section class="settlement-summary"><article><span>业务指标</span><b>326 个</b><small>5 个主题域 · 42 个数据集</small></article><article><span>认证指标</span><b>286 个</b><small class="positive">认证覆盖率 87.7%</small></article><article class="alert"><span>质量预警</span><b>4 项</b><small>1 项影响管理驾驶舱</small></article><article><span>数据服务调用</span><b>12.6 万次</b><small>近 24 小时</small></article><div><span>核心指标认证率</span><b>286 / 326 个</b><i><em style="width:87.7%"></em></i></div></section>

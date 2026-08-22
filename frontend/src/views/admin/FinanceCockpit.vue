@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {receivables,payables,cashflow,budgets} from '../../api/mock';const profit=[64,78,70,86,77,93,82,98,84,100,89,96]</script>
 <template><AdminShell><template #title>经营分析驾驶舱</template>
   <div class="page-heading"><div><p>EXECUTIVE INSIGHTS</p><h1>经营分析驾驶舱</h1><span>销售、供应链、财务、制造与交付的统一经营视图</span></div><div><button class="button secondary">订阅月报</button><button class="button primary">＋ 新建分析</button></div></div>

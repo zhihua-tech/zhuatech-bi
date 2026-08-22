@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const accounts=[
   {code:'DS-ERP-PROD',name:'ERP 生产库',bank:'MySQL 8 · 经营与财务主题',type:'数据库',balance:286.45,available:278.83,status:'正常'},
   {code:'DS-CRM-CLOUD',name:'CRM 业务数据',bank:'REST API · 客户与商机主题',type:'API',balance:128.62,available:128.62,status:'正常'},

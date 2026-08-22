@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {budgets,expenses} from '../../api/mock'</script>
 <template><AdminShell><template #title>自助分析</template><div class="page-heading"><div><p>SELF-SERVICE ANALYTICS</p><h1>自助分析空间</h1><span>拖拽式取数、指标组合、可视化分析与团队共享</span></div><div><button class="button secondary">导入工作簿</button><button class="button primary">＋ 新建分析</button></div></div>
 <section class="budget-head"><div><span>团队分析资产</span><strong>152<small> 个</small></strong><p>已发布 96 个 · 协作中 42 个 · 草稿 14 个</p></div><div class="donut"><b>91.2%</b><small>活跃率</small></div><dl><div><dt>本周访问</dt><dd>2,967 次</dd></div><div><dt>异常分析</dt><dd>制造效率</dd></div><div><dt>我的草稿</dt><dd>4 个</dd></div></dl></section>

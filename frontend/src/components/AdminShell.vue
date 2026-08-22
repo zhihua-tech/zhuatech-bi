@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>
 const groups=[
   {label:'数据分析',items:[['/admin/cockpit','分析应用驾驶舱','⌂'],['/admin/treasury','数据源管理','￥'],['/admin/settlement','指标与数据集','⇄'],['/admin/budget','自助分析','▤']]},
