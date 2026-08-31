@@ -82,3 +82,7 @@ npm run dev:demo
 ## 仪表盘数据新鲜度门禁
 
 新增 `POST /api/bi/insights/dashboard-freshness`，按每个数据集的刷新周期、最后成功时间和连续失败次数计算仪表盘健康分，输出 `HEALTHY / DEGRADED / BLOCKED`。严重陈旧的数据会阻止仪表盘发布，并明确列出需重跑的数据集和上游排查动作。
+
+## 企业级认证指标发布
+
+新增 `POST /api/enterprise/bi/certified-metric-release`，将指标口径审批、血缘完整性、行级权限、刷新 SLA、质量缺陷和对账容差纳入统一门禁，返回 `RELEASE / REVIEW / BLOCKED`。详见 [企业级认证指标说明](docs/ENTERPRISE_CERTIFIED_METRIC.md)。
