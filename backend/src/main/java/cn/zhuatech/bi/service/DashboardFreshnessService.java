@@ -11,8 +11,14 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class DashboardFreshnessService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         DatasetFreshness worst = request.datasets().stream()
             .max(Comparator.comparingDouble(this::freshnessRatio)).orElseThrow();
@@ -36,18 +42,30 @@ public class DashboardFreshnessService {
             worst.datasetName(), staleDatasets, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double freshnessRatio(DatasetFreshness dataset) {
         return (double) dataset.lastSuccessAgeMinutes() / dataset.expectedIntervalMinutes();
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String dashboardCode,
                           @NotEmpty List<@Valid DatasetFreshness> datasets) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record DatasetFreshness(@NotBlank String datasetName,
                                    @Min(0) int lastSuccessAgeMinutes,
                                    @Min(1) int expectedIntervalMinutes,
                                    @Min(0) int consecutiveFailures) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String dashboardCode, String status, int healthScore,
                          String worstDataset, List<String> staleDatasets,
                          List<String> actions) {}

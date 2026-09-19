@@ -12,12 +12,21 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 @Transactional(readOnly=true)
 public class BiService {
     private final DataSourceRepository accounts; private final BusinessMetricRepository businessMetrics; private final DataJobRepository dataJobs; private final AnalysisWorkbookRepository expenses; private final SubjectAreaRepository subjectAreas;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public BiService(DataSourceRepository accounts,BusinessMetricRepository businessMetrics,DataJobRepository dataJobs,AnalysisWorkbookRepository expenses,SubjectAreaRepository subjectAreas){this.accounts=accounts;this.businessMetrics=businessMetrics;this.dataJobs=dataJobs;this.expenses=expenses;this.subjectAreas=subjectAreas;}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Dashboard dashboard(){
         var accountList=accounts.findAll(); var businessMetricList=businessMetrics.findAllByOrderByDueDateAsc(); var dataJobList=dataJobs.findAllByOrderByDueDateAsc(); var expenseList=expenses.findAllByOrderByExpenseDateDesc(); var subjectAreaList=subjectAreas.findByFiscalYearOrderByDepartmentAsc(LocalDate.now().getYear());
         BigDecimal cash=sum(accountList.stream().map(DataSource::getBalance).toList());
@@ -30,13 +39,40 @@ public class BiService {
         BigDecimal rate=annual.signum()==0?BigDecimal.ZERO:actual.multiply(new BigDecimal("100")).divide(annual,1,RoundingMode.HALF_UP);
         return new Dashboard(cash,available,ar,overdue,ap,pending,rate,businessMetricList.stream().limit(6).map(BusinessMetricView::from).toList(),dataJobList.stream().limit(6).map(DataJobView::from).toList());
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private BigDecimal sum(List<BigDecimal> values){return values.stream().reduce(BigDecimal.ZERO,BigDecimal::add);}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<AccountView> accounts(){return accounts.findAll().stream().map(AccountView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<BusinessMetricView> businessMetrics(){return businessMetrics.findAllByOrderByDueDateAsc().stream().map(BusinessMetricView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<DataJobView> dataJobs(){return dataJobs.findAllByOrderByDueDateAsc().stream().map(DataJobView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<ExpenseView> expenses(){return expenses.findAllByOrderByExpenseDateDesc().stream().map(ExpenseView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<SubjectAreaView> subjectAreas(){return subjectAreas.findByFiscalYearOrderByDepartmentAsc(LocalDate.now().getYear()).stream().map(SubjectAreaView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public BusinessMetricView createBusinessMetric(CreateBusinessMetricRequest request){if(businessMetrics.findByBusinessMetricNo(request.businessMetricNo()).isPresent())throw new BusinessException("应收单号已存在");return BusinessMetricView.from(businessMetrics.save(new BusinessMetric(request.businessMetricNo(),request.customerName(),request.sourceDocument(),request.amount(),BigDecimal.ZERO,request.dueDate(),request.owner(),"待收款")));}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public BusinessMetricView recordReceipt(Long id,RecordReceiptRequest request){var item=businessMetrics.findById(id).orElseThrow(()->new BusinessException("应收记录不存在"));if("已结清".equals(item.getStatus()))throw new BusinessException("该应收已结清");if(item.getReceivedAmount().add(request.amount()).compareTo(item.getAmount())>0)throw new BusinessException("收款金额不能超过剩余应收");item.recordReceipt(request.amount());return BusinessMetricView.from(item);}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public ExpenseView submitExpense(SubmitExpenseRequest request){String no="BX-"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));return ExpenseView.from(expenses.save(new AnalysisWorkbook(no,request.claimant(),request.department(),request.category(),request.purpose(),request.amount(),request.expenseDate(),"待审批")));}
 }

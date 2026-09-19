@@ -3,8 +3,14 @@ package cn.zhuatech.bi.config;
 
 import cn.zhuatech.bi.model.*;import cn.zhuatech.bi.repository.*;import org.springframework.boot.CommandLineRunner;import org.springframework.context.annotation.*;import org.springframework.security.crypto.password.PasswordEncoder;import java.math.BigDecimal;import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration
 public class DataInitializer {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Bean CommandLineRunner seed(UserRepository users,DataSourceRepository accounts,BusinessMetricRepository businessMetrics,DataJobRepository dataJobs,AnalysisWorkbookRepository expenses,SubjectAreaRepository subjectAreas,PasswordEncoder encoder){return args->{
         if(users.count()>0)return;
         users.save(new UserAccount("admin",encoder.encode("admin123"),"经营平台主管",UserAccount.Role.ADMIN));

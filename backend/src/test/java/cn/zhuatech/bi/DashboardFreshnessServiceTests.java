@@ -9,9 +9,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class DashboardFreshnessServiceTests {
     private final DashboardFreshnessService service = new DashboardFreshnessService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void blocksDashboardWithSeverelyStaleDataset() {
         var result = service.evaluate(new DashboardFreshnessService.Request("EXEC-DASHBOARD", List.of(
@@ -23,6 +29,9 @@ class DashboardFreshnessServiceTests {
         assertTrue(result.staleDatasets().contains("inventory_hourly"));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void recognizesFreshDashboard() {
         var result = service.evaluate(new DashboardFreshnessService.Request("STORE-DASHBOARD", List.of(

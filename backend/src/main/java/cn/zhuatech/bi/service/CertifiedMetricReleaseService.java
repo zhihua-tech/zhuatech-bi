@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CertifiedMetricReleaseService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -30,13 +36,22 @@ public class CertifiedMetricReleaseService {
         return new Assessment(Decision.RELEASE, true, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String metricCode, @NotBlank String dataOwner,
                           boolean definitionApproved, boolean lineageComplete,
                           boolean rowLevelPolicyConfigured,
                           @Min(0) int lastRefreshAgeMinutes, @Min(1) int slaMinutes,
                           @Min(0) int reconciliationVarianceBps, @Min(0) int toleranceBps,
                           @Min(0) int openCriticalQualityIssues) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, boolean certified, List<String> blockers,
                              List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { RELEASE, REVIEW, BLOCKED }
 }
