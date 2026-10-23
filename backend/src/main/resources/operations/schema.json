@@ -1,0 +1,90 @@
+{
+  "slug": "bi",
+  "title": "报表口径覆盖与汇总差异核对",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "detailTotal",
+      "label": "明细合计",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "reportedTotal",
+      "label": "已发布合计",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "tolerance",
+      "label": "金额差异容差",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "dimensions",
+      "label": "应覆盖维度数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "certifiedDimensions",
+      "label": "已认证维度数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "periodEnd",
+      "label": "统计期间截止",
+      "type": "DATE"
+    }
+  ],
+  "columns": [
+    {
+      "key": "variance",
+      "label": "报表减明细差额"
+    },
+    {
+      "key": "missingDimensions",
+      "label": "未认证维度"
+    },
+    {
+      "key": "coveragePct",
+      "label": "认证维度覆盖%"
+    }
+  ],
+  "description": "将明细汇总、已发布指标、绝对差异容差及已认证维度覆盖一起核对，不执行任意SQL或自动改数。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "detailTotal": "10000",
+        "reportedTotal": "10000",
+        "tolerance": "0.01",
+        "dimensions": "5",
+        "certifiedDimensions": "5",
+        "periodEnd": "2026-10-22"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "variance": "#0",
+      "coveragePct": "#100"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "reportedTotal": "10000.02"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "reportedTotal": "10000.01"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "certifiedDimensions": "4"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "periodEnd": "2026-10-24"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "certifiedDimensions": "6"
+    },
+    "expected": {},
+    "error": true
+  }
+]
